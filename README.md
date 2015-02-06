@@ -6,7 +6,7 @@ You'll need:
 		2. PIR Sensor (https://www.modmypi.com/pir-motion-sensor)
 		3. Camera board(https://www.modmypi.com/raspberry-pi-noir-camera-board)
 		4. SD Card with raspbian installed (http://www.raspberrypi.org/downloads/)
-		5
+
 
 A python script for a motion activated camera
 
