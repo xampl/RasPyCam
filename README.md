@@ -1,6 +1,7 @@
 # RasPyCam
 
 You'll need: 
+
 		1. Rapsberry Pi (https://www.modmypi.com/shop/raspberry-pi-model-b-plus)	
 		2. PIR Sensor (https://www.modmypi.com/pir-motion-sensor)
 		3. Camera board(https://www.modmypi.com/raspberry-pi-noir-camera-board)
