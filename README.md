@@ -7,3 +7,6 @@ A python script for a motion activated camera
 		Install raspbian
 		Clone this python script
 		run "Sudo python motion.py"
+To do: 
+
+		Add email function
