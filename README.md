@@ -11,7 +11,8 @@ You'll need:
 A python script for a motion activated camera
 
 
-		1. Attach your PIR sensor to Pins 7, 24 and 26. (IO, Ground and 5V)
+		1. Attach your PIR sensor to Pins 26, 6 and 2. (IO, Ground and 5V) 
+		http://www.raspberrypi-spy.co.uk/wp-content/uploads/2013/01/pir_module_circuit_1.png
 		(https://www.modmypi.com/blog/raspberry-pi-gpio-sensing-motion-detection)
 		I did not use a breadboard, instead attaching directly. 
 		2. Attach your Rapsberry Pi NoIR cammera to the camera ribbon 
