@@ -22,3 +22,6 @@ A python script for a motion activated camera
 To do: 
 
 		Add email function
+
+Kudos: 
+		https://www.modmypi.com/blog/raspberry-pi-gpio-sensing-motion-detection
