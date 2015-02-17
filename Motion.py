@@ -30,18 +30,26 @@ def MOTION(PIR_PIN):
         os.system("raspistill -o " + Name)
         #ftp
         session = ftplib.FTP('FTPSERVER','USER','PASSWORD')
-        file = open(Name,'rb')                  # file to send
-        session.storbinary("STOR %s" % Name, file)     # send the file
-        file.close()                              # close file and FTP
-        session.quit()
-
-print"Motion Activated Camera(CTRL+C to exit)"
+        # file to send
+        file = open(Name,'rb')
+        # send the file                          
+        session.storbinary("STOR %s" % Name, file) 
+        # close file and FTP     
+        file.close()
+         # End session                                    
+        session.quit()                                 
+# Print message to indicate active
+print"Motion Activated Camera started(CTRL+C to exit)"
+# Wait
 time.sleep(2)
+# Indicate ready state
 print "READY"
+# Add evenht to detect motion and call MOTION function
 try:
         GPIO.add_event_detect(PIR_PIN, GPIO.RISING, callback=MOTION)
         while 1:
-                time.sleep(200)
+                time.sleep(300)
+# Add exit interrupt
 except KeyboardInterrupt:
         print "Quit"
         GPIO.cleanup()
