@@ -11,9 +11,13 @@ import smtplib
 import base64
 import ftplib
 
+# Create variable for naming suffix number
 nameSuff=int(0)
+# Set GPIO mode
 GPIO.setmode(GPIO.BCM)
+# Declare pin number
 PIR_PIN=7
+# Set up GPIO
 GPIO.setup(PIR_PIN, GPIO.IN)
 
 #Main function for action on state change
