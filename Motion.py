@@ -11,6 +11,7 @@ import smtplib
 import base64
 import ftplib
 
+# Create variable to store time and date
 now = time.strftime("%c")
 # Create variable for naming suffix number
 nameSuff=int(0)
