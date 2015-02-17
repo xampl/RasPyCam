@@ -11,15 +11,21 @@ import smtplib
 import base64
 import ftplib
 
+# Create variable to store time and date
+now = time.strftime("%c")
+# Create variable for naming suffix number
 nameSuff=int(0)
+# Set GPIO mode
 GPIO.setmode(GPIO.BCM)
+# Declare pin number
 PIR_PIN=7
+# Set up GPIO
 GPIO.setup(PIR_PIN, GPIO.IN)
 
 #Main function for action on state change
 def MOTION(PIR_PIN):
         #Print to console
-        print"Motion detected! SMILE!"
+        print"Motion detected! SMILE! "+now
         #iterate number for naming
         global nameSuff
         nameSuff +=1
@@ -30,18 +36,26 @@ def MOTION(PIR_PIN):
         os.system("raspistill -o " + Name)
         #ftp
         session = ftplib.FTP('FTPSERVER','USER','PASSWORD')
-        file = open(Name,'rb')                  # file to send
-        session.storbinary("STOR %s" % Name, file)     # send the file
-        file.close()                              # close file and FTP
-        session.quit()
-
-print"Motion Activated Camera(CTRL+C to exit)"
+        # file to send
+        file = open(Name,'rb')
+        # send the file                          
+        session.storbinary("STOR %s" % Name, file) 
+        # close file and FTP     
+        file.close()
+         # End session                                    
+        session.quit()                                 
+# Print message to indicate active
+print"Motion Activated Camera started(CTRL+C to exit)"
+# Wait
 time.sleep(2)
+# Indicate ready state
 print "READY"
+# Add evenht to detect motion and call MOTION function
 try:
         GPIO.add_event_detect(PIR_PIN, GPIO.RISING, callback=MOTION)
         while 1:
-                time.sleep(200)
+                time.sleep(300)
+# Add exit interrupt
 except KeyboardInterrupt:
         print "Quit"
         GPIO.cleanup()
