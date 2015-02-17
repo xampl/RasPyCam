@@ -11,6 +11,7 @@ import smtplib
 import base64
 import ftplib
 
+now = time.strftime("%c")
 # Create variable for naming suffix number
 nameSuff=int(0)
 # Set GPIO mode
@@ -23,7 +24,7 @@ GPIO.setup(PIR_PIN, GPIO.IN)
 #Main function for action on state change
 def MOTION(PIR_PIN):
         #Print to console
-        print"Motion detected! SMILE!"
+        print"Motion detected! SMILE! "+now
         #iterate number for naming
         global nameSuff
         nameSuff +=1
